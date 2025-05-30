@@ -1,0 +1,45 @@
+{
+  "name": "cctv-video-bar",
+  "version": "2.0.7",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MauryaAK/cctv-video-bar"
+  },
+  "homepage": "https://github.com/MauryaAK/cctv-video-bar/blob/main/README.md",
+  "bugs": {
+    "url": "https://github.com/MauryaAK/cctv-video-bar/issues"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^5.8.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "cctv",
+    "video-timeline",
+    "video-player",
+    "timeline",
+    "video-control",
+    "react-component",
+    "video-seek-bar",
+    "video-progress-bar",
+    "timeline-bar",
+    "video-bar",
+    "security-camera-bar",
+    "time-bar"
+  ]
+}
