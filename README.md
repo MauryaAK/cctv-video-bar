@@ -8,6 +8,11 @@
 ![bundle size](https://img.shields.io/badge/bundle%20size-19.7-brightgreen?style=flat-square)
 
 ---
+![Animated demo](assets/img1.gif)
+
+![Screenshot 1](assets/img2.png)
+
+![Screenshot 2](assets/img3.png)
 
 ## Installation
 
@@ -30,24 +35,30 @@ const App = () => {
     { startTime: "06:00am", endTime: "07:20am" },
     { startTime: "09:10am", endTime: "10:00am" },
     { startTime: "12:25pm", endTime: "01:15pm" },
-    { startTime: "03:50pm", endTime: "04:30pm" },
-    { startTime: "07:10pm", endTime: "08:00pm" },
-    { startTime: "10:35pm", endTime: "11:20pm" },
+    { start_time: "01:46:58", end_time: "02:47:13" }, 
+    { start_time: "03:06:58", end_time: "05:04:13" },// <================Currently, we accept three different time formats.
+    { start_time: new Date(), end_time: new Date() },// <================Currently, we accept three different time formats.
+    { start_time: "2025-05-31 08:38:51", end_time: "2025-05-31 08:43:52" },// <=========Currently, we accept three different time formats.
   ];
 
   return (
     <CCTVVideoBar
-      segmentWidth={2}
-      segmentHeight={180}
-      videoSegments={segments}
-      onTimeChange={(e) => console.log("Time:", e)}
-      containerStyle={{ backgroundColor: "#fff", height: 200 }}
-      midLineStyle={{ backgroundColor: "orange", height: "90%" }}
-      timeContainerStyle={{ justifyContent: "space-between" }}
-      timeTextStyle={{ color: "#333", backgroundColor: "#ddd", fontSize: 14 }}
-      barStyle={{ backgroundColor: "#28a745" }}
-      scrollContainerStyle={{ borderRadius: 8, borderColor: "#999" }}
-    />
+      totalSeconds={86400}
+      segmentWidth={1}
+      segmentHeight={60}
+      videoSegments={videoSegments}
+      onTimeChange={handleTimeChange}
+      value={controlledValue}
+      containerStyle={{}}
+      midLineStyle={{}}
+      timeTextStyle={{}}
+      barStyle={{}}
+      emptyBarColor="#d1d5db"
+      scrollContainerStyle={{}}
+      scrollbarStyle={{}}
+      scrollbarSegmentStyle={{}}
+      viewportIndicatorStyle={{}}
+/>
   );
 };
 
@@ -57,18 +68,25 @@ export default App;
 
 ## Props
 
-| Prop                   | Type                     | Description                                                                 |
-|------------------------|--------------------------|-----------------------------------------------------------------------------|
-| `segmentWidth`         | `number`                 | Width of each video segment in pixels.                                      |
-| `segmentHeight`        | `number`                 | Height of the video timeline bar.                                           |
-| `videoSegments`        | `VideoSegment[]`         | Array of recorded video segments with `startTime` and `endTime`.            |
-| `onTimeChange`         | `(time: string) => void` | Callback fired when the user navigates to a different time on the timeline. |
-| `containerStyle`       | `React.CSSProperties`    | Custom styles for the container element.                                    |
-| `midLineStyle`         | `React.CSSProperties`    | Styles for the vertical midline indicator.                                  |
-| `timeContainerStyle`   | `React.CSSProperties`    | Styles for the time labels container.                                       |
-| `timeTextStyle`        | `React.CSSProperties`    | Styles for the time label text.                                             |
-| `barStyle`             | `React.CSSProperties`    | Styles for the recorded video segments bar.                                 |
-| `scrollContainerStyle` | `React.CSSProperties`    | Styles for the scroll container wrapping the timeline.                      |
+
+| Prop                     | Type                     |Description                                                                                           |
+| ------------------------ | ------------------------ | ----------------------------------------------------------------------------------------------------- |
+| `totalSeconds`           | `number`                 | Total duration of the timeline in seconds (e.g., 86400 for 24 hours).                                 |
+| `segmentWidth`           | `number`                 | Width of each video segment in pixels.                                                                |
+| `segmentHeight`          | `number`                 | Height of the video timeline bar in pixels.                                                           |
+| `videoSegments`          | `VideoSegment[]`         | Array of recorded video segments, each with `startTime` and `endTime` properties (timestamps).        |
+| `onTimeChange`           | `(time: string) => void` | Callback fired when the user navigates to a different time on the timeline.                           |
+| `value`                  | `string`                 | Controlled value representing the currently selected time as a formatted string (e.g., "HH\:mm\:ss"). |
+| `containerStyle`         | `React.CSSProperties`    | Custom CSS styles for the outer container of the timeline.                                            |
+| `midLineStyle`           | `React.CSSProperties`    | CSS styles for the vertical midline indicator displayed on the timeline.                              |
+| `timeTextStyle`          | `React.CSSProperties`    | CSS styles for the time label text displayed along the timeline.                                      |
+| `barStyle`               | `React.CSSProperties`    | CSS styles for the bar representing recorded video segments.                                          |
+| `emptyBarColor`          | `string`                 | Color string (e.g., hex code) used for the empty/unrecorded portions of the timeline bar.             |
+| `scrollContainerStyle`   | `React.CSSProperties`    | CSS styles for the scrollable container that wraps the timeline bar.                                  |
+| `scrollbarStyle`         | `React.CSSProperties`    | CSS styles for the scrollbar element itself.                                                          |
+| `scrollbarSegmentStyle`  | `React.CSSProperties`    | CSS styles for individual segments within the scrollbar.                                              |
+| `viewportIndicatorStyle` | `React.CSSProperties`    | CSS styles for the viewport indicator that shows the visible timeline window.                         |
+
 
 
 ## License

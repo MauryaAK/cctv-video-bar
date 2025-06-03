@@ -1,12 +1,3 @@
 import React from "react";
-interface SegmentProps {
-    idx: number;
-    isVisible: boolean;
-    segmentWidth: number;
-    segmentHeight: number;
-    padding: number;
-    barStyle?: React.CSSProperties;
-    emptyBarColor?: string;
-}
-export declare const Segment: React.MemoExoticComponent<({ idx, isVisible, segmentWidth, segmentHeight, padding, barStyle, emptyBarColor, }: SegmentProps) => import("react/jsx-runtime").JSX.Element>;
-export {};
+import { SegmentProps } from "./types";
+export declare const Segment: React.MemoExoticComponent<({ startIdx, length, isVisible, segmentWidth, segmentHeight, padding, barStyle, emptyBarColor }: SegmentProps) => import("react/jsx-runtime").JSX.Element>;

@@ -1,7 +1,4 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { memo } from "react";
-import { formatTime } from "./utils/timeUtils";
-export const Segment = memo(({ idx, isVisible, segmentWidth, segmentHeight, padding, barStyle, emptyBarColor = "#fff", }) => {
-    var _a;
-    return (_jsx("div", { title: formatTime(idx), style: Object.assign({ position: "absolute", left: idx * segmentWidth + padding, width: segmentWidth, height: segmentHeight, backgroundColor: isVisible ? ((_a = barStyle === null || barStyle === void 0 ? void 0 : barStyle.backgroundColor) !== null && _a !== void 0 ? _a : "#007bff") : emptyBarColor, boxSizing: "border-box" }, (isVisible ? barStyle : {})) }));
-});
+import { formatTime } from "../utils/timeUtils";
+export const Segment = memo(({ startIdx, length, isVisible, segmentWidth, segmentHeight, padding, barStyle, emptyBarColor }) => (_jsx("div", { title: formatTime(startIdx), className: `absolute transition-colors duration-200 ${isVisible ? 'bg-blue-600' : 'bg-gray-200'}`, style: Object.assign({ left: startIdx * segmentWidth + padding, width: length * segmentWidth, height: segmentHeight, backgroundColor: isVisible ? barStyle.backgroundColor || "#2563eb" : emptyBarColor || "#e5e7eb", boxSizing: "border-box" }, (!isVisible ? {} : barStyle)) })));

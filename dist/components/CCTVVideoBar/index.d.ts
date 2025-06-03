@@ -1,3 +1,3 @@
 import React from "react";
-import { TimelineProps } from "./types";
-export declare const CCTVVideoBar: React.FC<TimelineProps>;
+import { CCTVVideoBarProps } from "./types";
+export declare const CCTVVideoBar: React.FC<CCTVVideoBarProps>;

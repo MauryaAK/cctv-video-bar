@@ -1,19 +1,35 @@
-export interface VideoSegment {
-    startTime: string;
-    endTime: string;
-}
-export interface TimelineProps {
+export type VideoSegment = {
+    start_time: string | Date;
+    end_time: string | Date;
+};
+export type Style = React.CSSProperties;
+export type CCTVVideoBarProps = {
     totalSeconds?: number;
     segmentWidth?: number;
     segmentHeight?: number;
-    videoSegments: VideoSegment[];
+    videoSegments?: VideoSegment[];
     onTimeChange?: (timeInSeconds: number) => void;
-    containerStyle?: React.CSSProperties;
-    midLineStyle?: React.CSSProperties;
-    timeContainerStyle?: React.CSSProperties;
-    timeTextStyle?: React.CSSProperties;
-    barStyle?: React.CSSProperties;
+    value?: number;
+    containerStyle?: Style;
+    midLineStyle?: Style;
+    timeTextStyle?: Style;
+    timeTextContainerStyle?: Style;
+    barStyle?: Style;
     emptyBarColor?: string;
-    scrollContainerStyle?: React.CSSProperties;
+    scrollContainerStyle?: Style;
     maxWidth?: string;
-}
+    scrollbarHeight?: number;
+    scrollbarStyle?: Style;
+    scrollbarSegmentStyle?: Style;
+    viewportIndicatorStyle?: Style;
+};
+export type SegmentProps = {
+    startIdx: number;
+    length: number;
+    isVisible: boolean;
+    segmentWidth: number;
+    segmentHeight: number;
+    padding: number;
+    barStyle: Style;
+    emptyBarColor: string;
+};
