@@ -18,29 +18,37 @@ npm install cctv-video-bar
 ## Usage
 
 ```tsx
-import  CCTVVideoBar  from "cctv-video-bar";
+import {ProgressScale} from 'cctv-video-bar'
 
 const App = () => {
-    const segments = [
+  const [currentTime,setCurrentTime]=useState(0)
+
+    const segments = [[
     { startTime: "12:00am", endTime: "12:01am" },
-    { startTime: "12:03am", endTime: "12:07am" },
-    { startTime: "12:08am", endTime: "12:09am" },
-    { startTime: "01:20am", endTime: "01:30am" },
-    { startTime: "03:30am", endTime: "04:45am" },
-    { startTime: "06:00am", endTime: "07:20am" },
-    { startTime: "09:10am", endTime: "10:00am" },
-    { startTime: "12:25pm", endTime: "01:15pm" },
     { start_time: "01:46:58", end_time: "02:47:13" }, 
     { start_time: "03:06:58", end_time: "05:04:13" },// <================Currently, we accept three different time formats.
     { start_time: new Date(), end_time: new Date() },// <================Currently, we accept three different time formats.
     { start_time: "2025-05-31 08:38:51", end_time: "2025-05-31 08:43:52" },// <=========Currently, we accept three different time formats.
-  ];
+    ],[
+    { startTime: "12:00am", endTime: "12:01am" },
+    { start_time: "01:46:58", end_time: "02:47:13" }, 
+    { start_time: "03:06:58", end_time: "05:04:13" },
+    { start_time: new Date(), end_time: new Date() },
+    { start_time: "2025-05-31 08:38:51", end_time: "2025-05-31 08:43:52" },
+    ],
+    [
+    { startTime: "12:00am", endTime: "12:01am" },
+    { start_time: "01:46:58", end_time: "02:47:13" }, 
+    { start_time: "03:06:58", end_time: "05:04:13" },
+    { start_time: new Date(), end_time: new Date() }
+    { start_time: "2025-05-31 08:38:51", end_time: "2025-05-31 08:43:52" },
+    ]];
 
   return (
-    <CCTVVideoBar
+    <ProgressScaleBar
       segmentHeight={60}
-      onTimeChange={(t) => console.log("Time changed:", t)}
-      value={3600}
+      onTimeChange={setCurrentTime}
+      value={currentTime}
       containerStyle={{}}
       midLineStyle={{}}
       timeTextStyle={{}}
