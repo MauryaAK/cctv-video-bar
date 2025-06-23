@@ -1,6 +1,6 @@
 {
   "name": "cctv-video-bar",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
@@ -29,6 +29,9 @@
   "license": "MIT",
   "keywords": [
     "react",
+    "progress-scale",
+    "scale",
+    "scale-bar",
     "cctv",
     "video-timeline",
     "video-player",

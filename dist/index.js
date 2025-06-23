@@ -1,2 +1,2 @@
 export * from "./components/CCTVVideoBar";
-export * from "./components/CCTVVideoBar/types";
+export * from "./components/types/types";
