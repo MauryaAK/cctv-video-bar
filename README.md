@@ -15,6 +15,24 @@
 npm install cctv-video-bar
 ```
 
+## CSS Setup
+```css
+Create a CSS file with the following classes and import it in your root file:
+
+.timeline-container::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline-container::-webkit-scrollbar {
+  height: 0px !important;
+  width: 1px !important;
+}
+
+.timeline-container:hover::-webkit-scrollbar {
+  display: block;
+}
+
+```
 ## Usage
 
 ```tsx

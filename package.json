@@ -1,6 +1,6 @@
 {
   "name": "cctv-video-bar",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
@@ -16,15 +16,18 @@
   },
   "peerDependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "styled-components": "^6.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/styled-components": "^5.1.34",
     "typescript": "^5.8.3"
   },
   "files": [
-    "dist"
+    "dist",
+    "styles.css"
   ],
   "license": "MIT",
   "keywords": [
@@ -44,5 +47,8 @@
     "video-bar",
     "security-camera-bar",
     "time-bar"
-  ]
+  ],
+  "dependencies": {
+    "styled-components": "^6.1.19"
+  }
 }
