@@ -36,6 +36,7 @@ Create a CSS file with the following classes and import it in your root file:
 ## Usage
 
 ```tsx
+import {useState} from 'react'
 import {ProgressScale} from 'cctv-video-bar'
 
 const App = () => {
@@ -63,26 +64,11 @@ const App = () => {
     ]];
 
   return (
-    <ProgressScaleBar
+    <ProgressScale
       segmentHeight={60}
       onTimeChange={setCurrentTime}
       value={currentTime}
-      containerStyle={{}}
-      midLineStyle={{}}
-      timeTextStyle={{}}
-      timeTextContainerStyle={{}}
-      barStyle={{}}
-      emptyBarColor="#d1d5db"
-      scrollContainerStyle={{}}
-      maxWidth="100%"
-      scrollbarHeight={10}
-      scrollbarStyle={{}}
-      scrollbarSegmentStyle={{}}
-      viewportIndicatorStyle={{}}
-      timeVisibility={true}
       segments={segments}
-      tickIntervalFont={12}
-      tickIntervalTextColor="#555"
     />
   );
 };
